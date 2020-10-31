@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo-transparent-2-144x144.png" type="image/x-icon">
+    <meta name="description" content="Home page of Easy Bus">
+    <title>Passenger Information</title>
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/travelinfo.css">
+
+    <script type="text/javascript" src="js/travelInfo.js"></script>
+    <script type="text/javascript" src="js/jquery_payment.js"></script>
+    <script type="text/javascript" src="js/bus_search.js"></script>
+    <script type="text/javascript" src="js/seat.js"></script>
+
+  </head>
+  <body>
+
+
+    <div class="section section-bg">
+        <div class="container">
+          <div class="container">
+            <div class=" wizard" >
+
+    <ul class="nav nav-wizard d-none d-md-block mt-3" >
+        <li class="text-my text-success text-bold "><strong>Seat Selection</strong></li>
+        <li class="text-my text-success text-bold"><strong>Passenger Info</strong></li>
+        <li class="text-my text-muted">Payment</li>
+        <li class="text-my text-muted">Confirmation</li>
+    </ul>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-7">
+      <div class="panel-heading text-my">Enter Passenger Information
+      </div>
+    <div class="panel-body">
+    <!-- </div> -->
+
+
+      <!-- <form action="/travellerinfo/689808" method="POST" class="form"> -->
+          <form action="jquery_payment.html" method="POST" class="form">
+
+                        <input type="hidden" name="csrfToken" value="8aa7a3871b5c7441680413d24f6e6f4832b66d7b-1598280143145-33a6951674d02dd44d9eb308">
+
+                        <input type="hidden" name="bookingCorrelation" value="689808">
+
+                        <div id="traveller-fields-part">
+
+<div class="form-group  required  ">
+    <label class="text-my">Passenger Name <span class="required" style="color:red">*</span></label>
+    <input required="true" type="text" class="form-control text-my" name="name" id="name" value="">
+    <div class="text-danger"><strong></strong></div>
+</div>
+
+<div class="form-group  required  ">
+
+    <label class="text-my">Gender <span style="color:red">*</span></label>
+
+                            <select class="form-control text-my" name="gender" id="gender">
+                                <!-- <option value="">--- Select ---</option> -->
+<!--
+                                <option class="text-my" value="MALE_ONLY">
+                                    Male
+                                </option>
+
+                                <option class="text-my" value="FEMALE_ONLY">
+                                    Female
+                                </option>
+
+                                <option class="text-my" value="MIXED">
+                                    Mixed
+                                </option> -->
+                            </select>
+    <div class="text-danger"><strong></strong></div>
+</div>
+
+<div class="form-group  ">
+    <label class="text-my">Email</label>
+      <input type="text" class="form-control" name="email" id="email" value="">
+    <div class="text-danger"><strong></strong></div>
+</div>
+
+<div class="form-group  required  ">
+    <label class="text-my">Phone Number</label>
+      <input type="text" class="form-control text-my" name="phoneNumber" id="phoneNumber" value="">
+      <div><small>Please enter Myanmar Cell Phone Number. Example: (09) 974565555</small></div>
+    <div class="text-danger"><strong></strong></div>
+</div>
+<div class="form-group  ">
+    <label class="text-my">Note</label>
+        <input type="text" class="form-control text-my" name="specialRequest" id="specialRequest" value="">
+    <div class="text-danger"><strong></strong></div>
+</div>
+      <div class="row">
+          <div class="col-md-12 text-right">
+              <br>
+              <button class="btn btn-lg btn-block btn-success" name="submit" id="traveller-info-submit-button">
+                Submit and Continue To Payment
+              </button>
+          </div>
+        </div>
+    </div>
+    </form>
+    </div>
+  </div>
+<!-- </div> -->
+  <!-- </div>
+</div> -->
+
+            <div class="col-md-5">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading text-my">
+                        Trip Information
+                    </div>
+                    <div class="panel-body">
+
+
+
+<table class="table table-striped table-sm">
+    <tbody>
+      <tr class="d-flex">
+          <td class="col-4 text-myp">
+              BusCode
+          </td>
+          <td class="col-8 text-myp" id="trBid">
+              <!-- Shwe Sin Set Kyar -->
+          </td>
+      </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-myp">
+            Operator
+        </td>
+        <td class="col-8 text-myp" id="trOperator">
+            <!-- Shwe Sin Set Kyar -->
+        </td>
+    </tr>
+
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Route
+        </td>
+        <td class="col-8 text-my" id="trRoute">
+
+            <!-- Yangon - Mandalay -->
+
+        </td>
+    </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-my" >
+            Departure Time
+        </td>
+        <td class="col-8" id="trDep">
+            <!-- Aug 16, 07:00 AM -->
+        </td>
+    </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Arrival Time
+        </td>
+        <td class="col-8" id="trArrival">
+            <!-- Aug 16, 06:00 PM -->
+        </td>
+    </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Seat Number
+        </td>
+        <td class="col-8" id="tdSeat">
+
+        </td>
+    </tr>
+
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Subtotal
+        </td>
+        <td class="col-8" id="tdprice">
+            <!-- 32,000 MMK -->
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var test= JSON.parse(sessionStorage.getItem("sessionKey"));
+
+document.getElementById('trOperator').innerHTML=test[0];
+// document.getElementById('trRoute').innerHTML=test[2]+" - "+test[3];
+//
+document.getElementById('trDep').innerHTML=test[1];
+document.getElementById('trArrival').innerHTML=test[2];
+document.getElementById('tdprice').innerHTML=test[4];
+document.getElementById('trBid').innerHTML=test[7];
+
+
+var source=JSON.parse(sessionStorage.getItem("sourceDestinationval"));
+document.getElementById('trRoute').innerHTML=test[5]+" - "+test[6];
+document.getElementById('tdSeat').innerHTML=sessionStorage.getItem("seatValue");
+
+
+</script>
+</script>
+  </body>
+</html>

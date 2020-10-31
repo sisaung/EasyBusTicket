@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin | Routes </title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!---fontawesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="file:///C:/Python/ProjectChange/Project/Admin/pages/tables/ticket.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+      <img src="../../dist/img/AdminLTELogo.png"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="ticket.html" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Information
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../tables/data.html" class="nav-link">
+                  &nbsp; <i class="fas fa-bus"></i>&nbsp;&nbsp;
+                  <p>Bus</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../tables/route.html" class="nav-link active">
+                  &nbsp; <i class="fas fa-route"></i>&nbsp;&nbsp;
+                  <p>Route</p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="../tables/seat.html" class="nav-link">
+                  &nbsp; <i class="fas fa-chair"></i>&nbsp;&nbsp;
+                  <p>Seat</p>
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a href="../tables/customer.html" class="nav-link">
+                  &nbsp; <i class="fas fa-users"></i>&nbsp;&nbsp;
+                  <p>Customer</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../tables/contact.html" class="nav-link">
+                  &nbsp; <i class="fas fa-address-card"></i>&nbsp;&nbsp;
+                  <p>Contact</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Route Lists</h1>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+        <div class="card">
+
+          </div>
+              <!-- /.card-header -->
+
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Add Route</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- <select name="select" id="add_whichbus" class="form-control pro-edt-select form-control-primary">
+                          <option value="0">- Select -</option>
+                        </select><br> -->
+                        <input type="text" class="form-control" id="add_whichbus" disabled><br>
+                        <input type="text" class="form-control" id="add_busid" placeholder="Bus" disabled><br>
+                        <input type="text" class="form-control" id="add_source" placeholder="Source"><br>
+                        <input type="text" class="form-control" id="add_destination" placeholder="Destination"><br>
+                        <input type="text" class="form-control" id="add_price" placeholder="Price"><br>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="Addroute();">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="card-body">
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" id="editRoute">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle"><b>Route Detail</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="container">
+                            <table id="route_list" class="table table-bordered table-striped">
+
+                              <thead>
+                              <tr>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>Price</th>
+                                <th></th>
+                              </tr>
+                              </thead>
+                              <tbody id="route_list">
+
+
+                              </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="container">
+                            <input type="text" class="form-control" id="edit_routeid" placeholder="Route Id" disabled><br>
+                            <input type="text" class="form-control" id="edit_busid" placeholder="Bus Id" disabled><br>
+                            <input type="text" class="form-control" id="edit_source" placeholder="Source"><br>
+                            <input type="text" class="form-control" id="edit_destination" placeholder="Destination"><br>
+                            <input type="text" class="form-control" id="edit_price" placeholder="Price"><br>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+                            <button type="button" class="btn btn-primary"  data-dismiss="modal" onclick="Editroute();">Edit</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Deleteroute();">Delete</button>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="modal fade" id="editRoute" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Bus Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <input type="text" class="form-control" id="edit_bus" placeholder="Bus"><br>
+                        <input type="text" class="form-control" id="edit_source" placeholder="Source"><br>
+                        <input type="text" class="form-control" id="edit_destination" placeholder="Destination"><br>
+                        <input type="text" class="form-control" id="edit_price" placeholder="Price"><br>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="Editroute();">Edit</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Deleteroute();">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <table id="route_datatable" class="table table-bordered table-striped">
+
+                  <thead>
+                  <tr>
+                    <th>Bus Name</th>
+                    <th>Class Type</th>
+                    <th>Date</th>
+                    <th>Depature Time</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody id="route_datatable">
+
+
+                  </tbody>
+
+                  <!-- <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                  </tr>
+                  </tfoot> -->
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.0.5
+    </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    reserved.
+  </footer> -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsivbustliste/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- <script src="../../dist/js/buslist.js"></script> -->
+<!-- <script src="../../dist/js/route.js"></script> -->
+<script src="../../dist/js/addroute.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>

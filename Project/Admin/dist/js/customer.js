@@ -1,0 +1,37 @@
+$("#customer_datatable").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $(document).ready(function(){
+      var datatable=$("#customer_datatable").DataTable();
+      var rowdata="";
+      $.ajax({
+      type : "GET",
+      contentType: "application/json; charset=utf-8",
+      url : "http://127.0.0.1:8000/Sale_Tickets/",
+      dataType: "json",
+      success:function(data){
+      console.log(data);
+        $('#total_customer').html(data.length);
+      for (let i=0; i<data.length; i++){
+        // var inhand=data[i].storedQty-data[i].soldQty;
+        datatable.row.add([
+           rowdata+data[i].traveller_name,
+           // rowdata+'<img src="'+data[i].imageOne+'" width="100px" height="70px">',
+           rowdata+data[i].email,
+           rowdata+data[i].phone_no,
+           rowdata+data[i].busname,
+           rowdata+data[i].route,
+           rowdata+data[i].depaturetime,
+           rowdata+data[i].seatnumbers,
+           rowdata+data[i].subtotal,
+           rowdata+data[i].buyingdate,
+
+
+        ]).draw(false);
+
+
+      }
+      }
+    });
+    });

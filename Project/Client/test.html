@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/hello.css">
+    <script type="text/javascript" src="js/bus_search.js"></script>
+    <script type="text/javascript" src="js/seat.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <script type="text/javascript" src="js/payment.js"></script>
+    <script type="text/javascript" src="js/travelInfo.js"></script>
+    <script src="js/jquery_payment.js"></script>
+
+  </head>
+  <body>
+
+
+
+<div class="section section-bg">
+    <div class="container">
+      <div class="container">
+        <div class=" wizard" >
+
+
+
+<ul class="nav nav-wizard d-none d-md-block mt-3" >
+    <li class="text-my text-success text-bold "><strong>Seat Selection</strong></li>
+    <li class="text-my text-muted">Passenger Info</li>
+    <li class="text-my text-muted">Payment</li>
+    <li class="text-my text-muted">Confirmation</li>
+</ul>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-md-7" id="aa">
+                <div class="panel panel-default" data-time-period="AM" data-operator-id="10">
+                    <div class="panel-heading text-my">
+                      Please select <span id="result"></span> Seats.
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8">
+                                <div class="driver-seat">
+                                    Driver
+                                </div>
+                                <table class="table table-seat-plan" id="seat-table">
+                                    <tbody id='tb'>
+                                      <!-- <tr>
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="1" data-seat-id="60373893">
+                                                      <span>1</span>
+                                                  </a>
+                                       </a>
+                                        </td>
+
+                                         <td>
+                                           <a class="seat seat-available " href="#" data-seat-number="2" data-seat-id="60373893">
+                                                       <span>2</span>
+                                                   </a>
+                                        </a>
+                                        </div>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+
+                                          <a class="seat seat-available " href="#" data-seat-number="3" data-seat-id="60373893">
+                                                      <span>3</span>
+                                                  </a>
+                                          </div>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="4" data-seat-id="60373893">
+                                                      <span>4</span>
+                                                  </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="5" data-seat-id="60373893">
+                                                      <span>5</span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="6" data-seat-id="60373893">
+                                                      <span>6</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="7" data-seat-id="60373893">
+                                                      <span>7</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="8" data-seat-id="60373893">
+                                            <span>8</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="9" data-seat-id="60373893">
+                                              <span>9</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="10" data-seat-id="60373893">
+                                              <span>10</span>
+                                        </td>
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="11" data-seat-id="60373893">
+                                            <span>11</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="12" data-seat-id="60373893">
+                                            <span>12</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="13" data-seat-id="60373893">
+                                            <span>13</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="14" data-seat-id="60373893">
+                                            <span>14</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="15" data-seat-id="60373893">
+                                            <span>15</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="16" data-seat-id="60373893">
+                                            <span>16</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="17" data-seat-id="60373893">
+                                            <span>17</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="18" data-seat-id="60373893">
+                                            <span>18</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="19" data-seat-id="60373893">
+                                            <span>19</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="20" data-seat-id="60373893">
+                                            <span>20</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="21" data-seat-id="60373893">
+                                            <span>21</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="22" data-seat-id="60373893">
+                                            <span>22</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="23" data-seat-id="60373893">
+                                            <span>23</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="24" data-seat-id="60373893">
+                                            <span>24</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="25" data-seat-id="60373893">
+                                            <span>25</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="26" data-seat-id="60373893">
+                                            <span>26</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="27" data-seat-id="60373893">
+                                            <span>27</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="28" data-seat-id="60373893">
+                                            <span>28</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="29" data-seat-id="60373893">
+                                            <span>29</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="30" data-seat-id="60373893">
+                                            <span>30</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="31" data-seat-id="60373893">
+                                            <span>31</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="32" data-seat-id="60373893">
+                                            <span>32</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="33" data-seat-id="60373893">
+                                            <span>33</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="34" data-seat-id="60373893">
+                                            <span>34</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="35" data-seat-id="60373893">
+                                            <span>35</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="36" data-seat-id="60373893">
+                                            <span>36</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="37" data-seat-id="60373893">
+                                            <span>37</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="38" data-seat-id="60373893">
+                                            <span>38</span>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-available " href="#" data-seat-number="39" data-seat-id="60373893">
+                                            <span>39</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="40" data-seat-id="60373893">
+                                            <span>40</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="41" data-seat-id="60373893">
+                                            <span>41</span>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-available" href="#" data-seat-number="42" data-seat-id="60373893">
+                                            <span>42</span>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                          <a class="seat seat-unavailable" href="#">
+                                              <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                          </a>
+                                          </div>
+                                        </td>
+
+                                        <td>
+                                            <a class="seat seat-unavailable" href="#">
+                                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                            <span class="aisle"></span>
+                                        </td>
+
+                                        <td>
+                                            <a class="seat seat-unavailable" href="#">
+                                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                          <a class="seat seat-unavailable" href="#">
+                                              <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                          </a>
+                                          </div>
+                                        </td>
+                                    </tr> -->
+
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading text-my">
+                        Trip Information
+                    </div>
+                    <div class="panel-body">
+
+
+
+<table class="table table-striped table-sm">
+    <tbody>
+      <tr class="d-flex" >
+          <td class="col-4 text-myp">
+              BusCode
+          </td>
+          <td class="col-8 text-myp" id="trBus_code">
+              <!-- Shwe Sin Set Kyar -->
+          </td>
+    <tr class="d-flex" >
+        <td class="col-4 text-myp">
+            Operator
+        </td>
+        <td class="col-8 text-myp" id="trOperator">
+            <!-- Shwe Sin Set Kyar -->
+        </td>
+
+
+    </tr>
+
+    <tr class="d-flex">
+        <td class="col-4 text-my" >
+            Route
+        </td>
+        <td class="col-8 text-my" id="trRoute">
+
+            <!-- Yangon - Mandalay -->
+
+        </td>
+    </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Departure Time
+        </td>
+        <td class="col-8" id="trDep">
+            <!-- Aug 16, 07:00 AM -->
+        </td>
+    </tr>
+    <tr class="d-flex">
+        <td class="col-4 text-my" >
+            Arrival Time
+        </td>
+        <td class="col-8" id="trArrival">
+            <!-- Aug 16, 06:00 PM -->
+        </td>
+    </tr>
+
+
+
+    <tr class="d-flex">
+        <td class="col-4 text-my">
+            Subtotal
+        </td>
+        <td class="col-8" id="tdprice">
+
+            <!-- 32,000 MMK -->
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+<hr>
+
+<h3 class="text-my text-muted text-center">Please select <span id="results"></span>  Seats.</h3>
+
+
+<h1 id="selectedSeatNumbers" class="text-primary text-center"></h1>
+
+
+
+<form  method="GET" class="form" action="travelINfo.html">
+
+<input type="hidden" name="csrfToken" value="4eefcc572d4893c4f3187e522765e21900a0b15c-1597387784068-1083f7995b624954649f4216">
+
+<div class="row">
+
+
+  <div class="col-md-8 col-sm-5 col-xs-7">
+  <input type="hidden" class="form-control" name="seatIDs" id="seatIDs" value="">
+
+        <div class="text-danger"></div>
+    </div>
+    <!--
+    <div class="info"></div>
+    -->
+</div>
+
+<div class="row">
+
+
+    <div class="col-md-8 col-sm-5 col-xs-7">
+
+    <input type="hidden" class="form-control" name="correlationId" id="correlationId" value="10-1106827-381-0-2">
+    <div class="text-danger"></div>
+    </div>
+    <!--
+    <div class="info"></div>
+    -->
+</div>
+
+<button id="seatSelectionSubmitButton" class="btn btn-success btn-lg btn-block" type="submit" disabled="true">
+<span class="text-my">Proceed To</span>
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+// document.getElementById('trOperator').innerHTML=sessionStorage.getItem("textvalue");
+// document.getElementById('trRoute').innerHTML=sessionStorage.getItem("sessionKey");
+// document.getElementById('trDep').innerHTML=sessionStorage.getItem("depval");
+// document.getElementById('trArrival').innerHTML=sessionStorage.getItem("arrval");
+// document.getElementById('tdprice').innerHTML=sessionStorage.getItem("value");
+//
+// document.getElementById('result').innerHTML=sessionStorage.getItem("valid");
+// document.getElementById('results').innerHTML=sessionStorage.getItem("valid");
+
+
+// break ##########################################
+// document.getElementById('trOperator').innerHTML=sessionStorage.getItem("textvalue");
+// var maxSeats=sessionStorage.getItem("textvalue");
+// maxSeats=parseInt(maxSeats);
+// console.log(maxSeats);
+
+// console.log(test[0]);
+// console.log(test[1]);
+
+//
+// document.getElementById('result').innerHTML=test[1];
+// document.getElementById('results').innerHTML=test[1];
+// document.getElementById('trOperator').innerHTML=test[0];
+// document.getElementById('trRoute').innerHTML=test[2];
+// document.getElementById('trDep').innerHTML=test[3];
+// document.getElementById('trArrival').innerHTML=test[4];
+
+var test= JSON.parse(sessionStorage.getItem("sessionKey"));
+document.getElementById('result').innerHTML=test[3];
+document.getElementById('results').innerHTML=test[3];
+document.getElementById('trOperator').innerHTML=test[0];
+// document.getElementById('trRoute').innerHTML=test[2]+" - "+test[3];
+//
+document.getElementById('trDep').innerHTML=test[1];
+document.getElementById('trArrival').innerHTML=test[2];
+document.getElementById('tdprice').innerHTML=test[4];
+
+// var source=JSON.parse(sessionStorage.getItem("sourceDestinationval"));
+document.getElementById('trRoute').innerHTML=test[5]+" - "+test[6];
+document.getElementById('trBus_code').innerHTML=test[7];
+
+</script>
+<table border="1">
+  <thead>
+    <tbody id="seat_disable">
+
+    </tbody>
+  </thead>
+</table>
+<!-- <script type="text/javascript">
+  document.getElementById('trOperator').innerHTML=sessionStorage.getItem("textvalue");
+  var operator=sessionStorage.getItem("textvalue");
+  op=operator.toString();
+    document.getElementById('results').innerHTML=JSON.parse(sessionStorage.getItem['formValues']);
+</script> -->
+  </body>
+</html>

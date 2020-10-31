@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo-transparent-2-144x144.png" type="image/x-icon">
+    <meta name="description" content="Home page of Easy Bus">
+    <title>Search Trip</title>
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+    <!-- css -->
+
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/default.date.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/bus_search_trip.js"></script>
+    <script type="text/javascript" src="js/picker.js"></script>
+    <script type="text/javascript" src="js/picker.date.js"></script>
+    <script type="text/javascript" src="js/legacy.js"></script>
+    <script type="text/javascript" src="js/bus_search.js"></script>
+    <script type="text/javascript" src="js/seat.js"></script>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <style media="screen">
+
+
+
+    </style>
+
+
+
+
+  </head>
+  <body>
+
+
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col md-12">
+            <div class="card">
+              <div class="card-header">
+                Search Trip
+              </div>
+              <div class="card-body">
+                <form class="form"  method="get">
+                  <div class="row">
+                    <div class="col-md-3 col-12 mt-1">
+                      <small class="text-me"><b>Leaving Form</b></small>
+                      <select class="selection" name="sourceId" id="sourceId">
+                        <option value="">Select a Location</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+
+
+                      </select>
+
+                    </div>
+                    <div class="col-md-3 col-12 mt-1">
+                      <small class="text-me"><b>Going To</b></small>
+                      <select class="destination" name="destinationId" id="goID">
+                        <option value="">Select a Location</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+
+                      </select>
+
+                    </div>
+                    <div class="col-md col-6 mt-1">
+                      <small class="text-me"><b>Departure Date</b></small>
+
+                       <input type="date" id="departureDate"  name="departureDate">
+                    </div>
+                    <div class="col-md col-6 mt-1">
+                      <small class="text-me"><b>Number of Seat</b></small>
+                      <select class="numberoftravellers" name="numberoftravellers" id="seatID">
+                        <option class="text-my" value="1" selected>1</option>
+
+                        <option class="text-my" value="2" >2</option>
+
+                        <option class="text-my" value="3" >3</option>
+
+                        <option class="text-my" value="4" >4 </option>
+
+                        <option class="text-my" value="5" >5</option>
+
+                        <option class="text-my" value="6" >6</option>
+
+                      </select>
+
+                    </div>
+                    <div class="col-md col-12 mt-1">
+                      <small class="text-my"><b>Nationality</b></small>
+                      <select class="nationality" name="nationality" id="nationalID">
+                        <option class="text-muted text-my" value="">Select</option>
+                        <option class="text-my" value="local" >Myanmar</option>
+                        <option class="text-my" value="foreign" >Foreigner</option>
+
+                      </select>
+
+                    </div>
+                    <div class="col-md col-12 mt-1 d-flex align-content-end flex-wrap">
+                     <input type="button" class="btn btn-dark btn-search" id="search" value="Search Now" ></button>
+
+                  </div>
+
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row mt-3">
+          <div class="col-lg-3 col-md-3 col-sm-12 d-none d-md-block">
+            <div class="card">
+              <div class="card-header">
+                Time
+              </div>
+              <div class="card-body" id="timebtn">
+                <input type="radio" name="time_option" class="time_option" id="time_option_any" value="" checked> <label for="time_option_any">Any Time</label><br>
+                <input type="radio" name="time_option" class="time_option" id="time_option_am" value="Day"> <label for="time_option_am">Day Bus</label><br>
+                <input type="radio" name="time_option" class="time_option" id="time_option_pm" value="Night"> <label for="time_option_pm">Night Bus</label><br>
+
+              </div>
+
+            </div>
+            <div class="card">
+              <div class="card-header">
+                Bus Operator
+              </div>
+                <div class="card-body">
+
+
+
+                <input type="radio" name="operator_option" class="operator_option"
+                           id="operator_option_any" value="" checked> <label for="operator_option_any">All Operators</label><br>
+                  <div id="radiobtn" class="operator_option">
+
+
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-9 col-md-9 col-sm-12" id="trip">
+
+
+              <div id="preloader5" class="text-center" style="position:absolute; top:150px;left:400px; text-align:center">
+
+              </div>
+
+
+
+
+
+      <!-- <script type="text/javascript">
+      var test= JSON.parse(sessionStorage.getItem("sessionKey"));
+      document.getElementById('seateight').innerHTML=test[1];
+      </script> -->
+
+      <!--
+      <script type="text/javascript">
+      var dtToday = new Date();
+
+  var month = dtToday.getMonth() + 1;
+  var day = dtToday.getDate();
+  var year = dtToday.getFullYear();
+  if(month < 10)
+      month = '0' + month.toString();
+  if(day < 10)
+      day = '0' + day.toString();
+
+  var maxDate = year + '-' + month + '-' + day;
+
+  $('#departureDate').attr('min', maxDate);
+      </script> -->
+
+  </body>
+</html>

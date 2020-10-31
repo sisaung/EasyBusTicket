@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/payment.css">
+  <link rel="stylesheet" href="css/hello.css">
+
+  <script src="js/jquery.payment.js"></script>
+  <script src="js/jquery_payment.js"></script>
+
+  <script type="text/javascript" src="js/bus_search.js"></script>
+  <script type="text/javascript" src="js/payment.js"></script>
+  <script type="text/javascript" src="js/travelInfo.js"></script>
+  <script type="text/javascript" src="js/seat.js"></script>
+
+  <style type="text/css" media="screen">
+
+
+  .trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+  }
+    .has-error input {
+      border-width: 2px;
+    }
+
+    .validation.text-danger:after {
+      content: 'Please check your payment validation';
+    }
+
+    .validation.text-success:after {
+      content: 'Thanks you for your payment';
+    }
+  </style>
+
+  <script>
+    jQuery(function($) {
+      $('[data-numeric]').payment('restrictNumeric');
+      $('.cc-number').payment('formatCardNumber');
+      $('.cc-exp').payment('formatCardExpiry');
+      $('.cc-cvc').payment('formatCardCVC');
+
+      $.fn.toggleInputError = function(erred) {
+        this.parent('.form-group').toggleClass('has-error', erred);
+        return this;
+      };
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+
+        var cardType = $.payment.cardType($('.cc-number').val());
+        $('.cc-number').toggleInputError(!$.payment.validateCardNumber($('.cc-number').val()));
+        $('.cc-exp').toggleInputError(!$.payment.validateCardExpiry($('.cc-exp').payment('cardExpiryVal')));
+        $('.cc-cvc').toggleInputError(!$.payment.validateCardCVC($('.cc-cvc').val(), cardType));
+        $('.cc-brand').text(cardType);
+
+        $('.validation').removeClass('text-danger text-success');
+        $('.validation').addClass($('.has-error').length ? 'text-danger' : 'text-success');
+
+      });
+
+    });
+  </script>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <div class="alert">
+      <span class="closebtn" id="time_limit"></span>
+      <!-- <strong>Danger!</strong> Indicates a dangerous or potentially negative action. -->
+      &nbsp; &nbsp;&nbsp;<span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Please choose one payment option and checkout within time.
+    </div>
+      Payment Method
+
+    </h1>
+
+    <form action="ticket.html" novalidate autocomplete="on" method="POST" >
+      <div class="form-group">
+        <label for="cc-number" class="control-label">Card number formatting <small class="text-muted">[<span class="cc-brand"></span>]</small></label>
+        <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cc-exp" class="control-label">Card expiry formatting</label>
+        <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="•• / ••" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cc-cvc" class="control-label">Card CVC formatting</label>
+        <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="•••" required>
+      </div>
+
+      <div class="form-group">
+        <label for="numeric" class="control-label">Restrict numeric</label>
+        <input id="numeric" type="tel" class="input-lg form-control" data-numeric>
+      </div>
+
+      <button class="btn btn-primary" id="success" >Confirm Payments</button>
+
+      <h2 class="validation"></h2>
+    </form>
+    <div id="myModal" class="modal fade">
+    	<div class="modal-dialog modal-confirm">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<div class="icon-box">
+    					<i class="material-icons">&#xE876;</i>
+    				</div>
+    				<h4 class="modal-title w-100">Awesome!</h4>
+    			</div>
+    			<div class="modal-body">
+    				<p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+    			</div>
+    			<div class="modal-footer">
+    				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    document.getElementById("time_limit").innerHTML=sessionStorage.getItem("time_limit_payment");
+  </script>
+
+</html>

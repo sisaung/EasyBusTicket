@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo-transparent-2-144x144.png" type="image/x-icon">
+    <meta name="description" content="Home page of Easy Bus">
+    <title>Print Your Ticket</title>
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="printticket.css">
+
+      <script type="text/javascript" src="js/printticket.js"></script>
+      <script type="text/javascript" src="js/bus_search.js"></script>
+
+  </head>
+  <body>
+
+
+<div class="col-md-1">
+
+</div>
+
+            <div class="col-md-4">
+              <h1>Find back your booking</h1>
+                <div class="panel panel-default">
+                    <!-- <div class="panel-heading text-my">
+                      <h1>Thanks for Pucharsing Our Ticket</h1>
+                    </div> -->
+                    <div class="panel-body">
+
+
+<div class="container-fluid">
+  <div class="row">
+    <label>Leaving From  <span style="color:red">*</span></label>
+  </div>
+
+  <div class="row">
+    <input class="form-control text-my" list="browser" id="place" placeholder="Select"/>
+    <datalist id="browser">
+      <option value="Yangon">
+      <option value="Mandalay">
+      <option value="NayPyiTaw" >
+      <option value="Mawlamyine">
+      <option value="Ye" >
+      <option value="Dawei">
+      <option value="Bago">
+      <option value="Hpa-An">
+      <option value="Lashio">
+      <option value="Magway">
+      <option value="Mudon">
+      <option value="Myitkyina">
+      <option value="Ngapali">
+      <option value="Pyay">
+      <option value="Pyin Oo Lwin">
+      <option value="Taunggyi">
+      <option value="Taungoo">
+      <option value="Thanbyuzayat">
+      <option value="Thaton">
+
+
+    </datalist>
+  </div>
+
+  <br>
+  <div class="row">
+    <label>Going To  <span style="color:red">*</span></label>
+  </div>
+
+  <div class="row">
+    <input class="form-control text-my" list="browser" id="place1" placeholder="Select"/>
+    <datalist id="browser">
+      <option value="Yangon">
+      <option value="Mandalay">
+      <option value="NayPyiTaw" >
+      <option value="Mawlamyine">
+      <option value="Ye" >
+      <option value="Dawei">
+      <option value="Bago">
+      <option value="Hpa-An">
+      <option value="Lashio">
+      <option value="Magway">
+      <option value="Mudon">
+      <option value="Myitkyina">
+      <option value="Ngapali">
+      <option value="Pyay">
+      <option value="Pyin Oo Lwin">
+      <option value="Taunggyi">
+      <option value="Taungoo">
+      <option value="Thanbyuzayat">
+      <option value="Thaton">
+
+    </datalist>
+  </div>
+
+
+  <br>
+  <div class="row">
+    <label>Departure Date  <span style="color:red">*</span></label>
+  </div>
+
+  <div class="row">
+    <input class="form-control text-my" type="date" id="departureDate"  name="departureDate"
+   data-value="2020-08-18" placeholder="Pick a date" required class="datepicker" >
+  </div>
+
+
+  <br>
+  <div class="row">
+    <label>Phone Number  <span style="color:red">*</span></label>
+  </div>
+
+  <div class="row">
+    <input type="text" class="form-control text-my" name="phoneNumber" id="phoneNumber" value="" placeholder="+95 01234567">
+  </div>
+
+  <br>
+  <div class="row">
+    <button class="btn btn-lg btn-block btn-success" type="submit" name="submit" id="traveller-info-submit-button" onclick="Timeout();">
+    Retrieve Booking
+    </button>
+  </div>
+
+
+
+</div>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="col-md-8" id="order_ticket_find">
+
+
+              <!-- <div class="panel panel-default">
+                  <div class="panel-body" >
+
+                      <table class="table table-striped table-sm">
+                          <tbody>
+                            <tr class="d-flex">
+                                <td class="col-4 text-myp">
+                                    BusCode
+                                </td>
+                                <td class="col-8 text-myp" id="trBid">
+
+                                </td>
+                            </tr>
+                          <tr class="d-flex">
+                              <td class="col-4 text-myp">
+                                  Operator
+                              </td>
+                              <td class="col-8 text-myp" id="trOperator">
+
+                              </td>
+                          </tr>
+ 
+                           <tr class="d-flex">
+                              <td class="col-4 text-my">
+                                  Route
+                              </td>
+                              <td class="col-8 text-my" id="trRoute">
+
+
+
+                              </td>
+                          </tr>
+                          <tr class="d-flex">
+                              <td class="col-4 text-my" >
+                                  Departure Time
+                              </td>
+                              <td class="col-8" id="trDep">
+
+                              </td>
+                          </tr>
+                          <tr class="d-flex">
+                              <td class="col-4 text-my">
+                                  Arrival Time
+                              </td>
+                              <td class="col-8" id="trArrival">
+
+                              </td>
+                          </tr>
+                          <tr class="d-flex">
+                              <td class="col-4 text-my">
+                                  Seat Number
+                              </td>
+                              <td class="col-8" id="tdSeat">
+
+                              </td>
+                          </tr>
+
+                          <tr class="d-flex">
+                              <td class="col-4 text-my">
+                                  Subtotal
+                              </td>
+                              <td class="col-8" id="tdprice">
+
+                              </td>
+                          </tr>
+
+                          </tbody>
+                      </table>
+                      </div>
+                  </div>
+              </div> -->
+
+
+
+
+
+
+  </body>
+  <script type="text/javascript">
+  var test= JSON.parse(sessionStorage.getItem("sessionKey"));
+  var order_find = JSON.parse(sessionStorage.getItem("order"));
+
+  </script>
+</html>

@@ -1,0 +1,118 @@
+
+.col-md,
+.col-md-auto,
+.col-md-12,
+.col-md-11,
+.col-md-10,
+.col-md-9,
+.col-md-8,
+.col-md-7,
+.col-md-6,
+.col-md-5,
+.col-md-4,
+.col-md-3,
+.col-md-2,
+.col-md-1,
+.col,
+.col-auto,
+.col-12,
+.col-11,
+.col-10,
+.col-9,
+.col-8,
+.col-7,
+.col-6,
+.col-5,
+.col-4,
+.col-3,
+.col-2,
+.col-1 {
+position:relative;
+width:100%;
+padding-right:10px;
+padding-left:10px;
+cursor:pointer;
+}
+
+.text-me{font-size: 12px}
+
+
+#preloader5{
+    position:relative;
+    width:30px;
+    height:30px;
+    background:#3498db;
+    border-radius:50px;
+    animation: preloader_5 1.5s infinite linear;
+}
+#preloader5:after{
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-top:10px solid #9b59b6;
+    border-bottom:10px solid #9b59b6;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-radius:50px;
+    content:'';
+    top:-20px;
+    left:-20px;
+    animation: preloader_5_after 1.5s infinite linear;
+}
+@keyframes preloader_5 {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);background:#2ecc71;}
+    100% {transform: rotate(360deg);}
+}
+@keyframes preloader_5_after {
+    0% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
+    50% {border-top:10px solid #3498db;border-bottom:10px solid #3498db;}
+    100% {border-top:10px solid #9b59b6;border-bottom:10px solid #9b59b6;}
+}
+/* .selection,.destination,.numberoftravellers,.nationality{ display: block;
+font-size: 14px;
+font-family: sans-serif;
+font-weight: 700;
+color: #444;
+line-height: 1.3;
+padding: .6em 1.4em .5em .8em;
+width: 100%;
+max-width: 100%;
+box-sizing: border-box;
+margin: 0;
+border: 1px solid #aaa;
+box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+border-radius: .5em;
+-moz-appearance: non;
+-webkit-appearance: non;
+appearance: non;
+background-color: #fff;} */
+
+
+/* .dep
+{font-size: 14px;
+font-family: sans-serif;
+font-weight: 700;
+color: #444;
+line-height: 1.3;
+padding: .6em 1.4em .5em .8em;
+width: 100%;
+max-width: 100%;
+box-sizing: border-box;
+margin: 0;
+border: 1px solid #aaa;
+box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+border-radius: .5em;
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+background-color: #fff;
+} */
+
+.btn-search {
+border-color: #f40e0e;
+box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+width: 120px;
+border-radius: 10px;
+margin-bottom: 8px
+}

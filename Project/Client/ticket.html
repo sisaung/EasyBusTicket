@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo-transparent-2-144x144.png" type="image/x-icon">
+    <meta name="description" content="Home page of Easy Bus">
+    <title>Confirmation</title>
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-
+
+      BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+          <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-
+
+            AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ticket.css">
+    <script type="text/javascript" src="js/travelInfo.js"></script>
+    <script type="text/javascript" src="js/bus_search.js"></script>
+    <script type="text/javascript" src="js/bus_search.js"></script>
+    <script type="text/javascript" src="js/ticket.js"></script>
+
+    <style media="screen">
+    h1{text-align: center;}
+    </style>
+
+  </head>
+  <body>
+
+
+ <div class="col-md-3">
+</div>
+            <div class="col-md-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading text-my">
+                      <h1>Thanks for Pucharsing Our Ticket</h1>
+                    </div>
+                    <div class="panel-body">
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      Operator Name
+    </div>
+
+    <div class="col-4" id="operator_name">
+      <!-- Operator Name -->
+    </div>
+  </div>
+
+
+<br>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      Leaving From
+    </div>
+
+    <div class="col-4" id="leave_from">
+      <!-- Leaving From -->
+    </div>
+  </div>
+
+
+  <br>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        Going To
+      </div>
+
+      <div class="col-4" id="going_to">
+        <!-- Going To -->
+      </div>
+    </div>
+
+
+    <br>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          Depature Time
+        </div>
+
+        <div class="col-4" id="depaturetime">
+          <!-- Depature Time -->
+        </div>
+      </div>
+
+
+      <br>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            Arrival Time
+          </div>
+
+          <div class="col-4" id="arrival_time">
+            <!-- Arrival Time -->
+          </div>
+        </div>
+
+
+        <br>
+          <div class="row justify-content-center">
+            <div class="col-4">
+              Traveller Name
+            </div>
+
+            <div class="col-4" id="traveller-name">
+              <!-- Traveller Name -->
+            </div>
+          </div>
+
+
+          <br>
+            <div class="row justify-content-center">
+              <div class="col-4">
+                Phone Number
+              </div>
+
+              <div class="col-4" id="ph_no">
+                <!-- Phone Number -->
+              </div>
+            </div>
+
+
+            <br>
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  Seat Number
+                </div>
+
+                <div class="col-4" id="seat">
+                  <!-- Seat Number -->
+                </div>
+              </div>
+
+              <!-- <br> -->
+              <hr>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    Subtotal
+                  </div>
+
+                  <div class="col-4" id="sub_total">
+                    <!-- Subtotal -->
+                  </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <button type="button" name="button" class="btn btn-dark" id="Finish">OK</button>
+                  </div>
+
+                  <div class="row justify-content-right">
+                    <div class="col-4">
+                      <button type="button" name="button" class="btn btn-dark" id="Cancel_finish">Cancel</button>
+                    </div>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+  </body>
+  <script type="text/javascript">
+  var test= JSON.parse(sessionStorage.getItem("sessionKey"));
+  var voucher_ticket_session = JSON.parse(sessionStorage.getItem("voucher_ticket"));
+  document.getElementById('operator_name').innerHTML = test[0];
+  document.getElementById('leave_from').innerHTML = test[5];
+  document.getElementById('going_to').innerHTML = test[6];
+  document.getElementById('depaturetime').innerHTML = voucher_ticket_session[0];
+  document.getElementById('arrival_time').innerHTML = voucher_ticket_session[1];
+  document.getElementById('traveller-name').innerHTML = voucher_ticket_session[2];
+  document.getElementById('ph_no').innerHTML = voucher_ticket_session[3];
+  document.getElementById('seat').innerHTML = voucher_ticket_session[4];
+  document.getElementById('sub_total').innerHTML = voucher_ticket_session[5];
+
+  </script>
+</html>

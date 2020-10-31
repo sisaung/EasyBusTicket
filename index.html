@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BEE Data Myanmar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="jquery.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	
+	<!-- created -->
+	<script type="text/javascript" src="js/index.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<!-- This is body area -->
+	<div class="container-fluid">
+		<!-- This is header area -->
+		<div class="row header" id="header">
+			<div class="col-md-2">
+				<a href="https://beedatamyanmar.com/" target="_blank">
+					<img src="images/logo.jpg" alt="Logo" width="80" height="80" class="logo">
+				</a>
+			</div>
+			<div class="col-md-7">
+				<h1 style="text-shadow: 7px 20px 5px white;">BEE Data Myanmar Software Company</h1>
+			</div>
+			<div class="col-md-3">
+				<audio controls autoplay loop>
+					<source src="media/music/home.mp3" type="audio/mp3">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+		</div>
+
+		<!-- This is body area -->
+		<div class="row body" id="body">
+			<!-- This is menu area. -->
+			<div class="col-md-2 menu" id="menu">
+				<ul class="menu-bar">
+					<li onclick="ShowHome();" class="btn btn-success">Home</li>
+					<li onclick="ShowEmployee();" class="btn btn-success" id="showEmployee">Employee</li>
+					<li onclick="ShowAbout();" class="btn btn-success">About</li>
+				</ul>
+			</div>
+
+			<!-- This is Home  -->
+			<div class="col-md-10 content" id="home">
+				<img src="images/home.jpg" width="100%">
+			</div>
+
+			<!-- This is Employee information -->
+			<div class="col-md-10 content" id="employee">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>Employee Information</h1>
+					</div>
+					<div class="col-md-2">
+						<button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#employeeRegisterModal">Register</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table table-striped" id="studentTable">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Age</th>
+									<th>Gender</th>
+									<th>Address</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody id="employeeTableBody">
+								<thread>
+									<!-- Here is the employee information that retrieves form employee table -->
+								</thread>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<!-- This is About Information -->
+			<div class="col-md-10 content" id="about">
+				<img src="images/about.jpg" width="100%">
+			</div>
+		</div>
+
+		<!-- This is footer area -->
+		<div class="row footer" id="footer">
+			<div class="col-md-12">
+				<h5>Copyright &copy; BEE Data Myanmar Software Company</h5>
+			</div>
+		</div>
+	</div>
+	
+	<!-- This is Modal area -->
+	<div class="container">
+		<!-- Employee Register Modal -->
+		<div class="modal fade" id="employeeRegisterModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Employee Register!</h4>
+						<button type="button" class="close" onclick="ClearEmployeeRegisterModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<table class="table">
+								<tr>
+									<th><label>Name</label></th>
+									<td><input type="text" class="form-control" id="reName"></td>
+								</tr>
+								<tr>
+									<th><label>Age</label></th>
+									<td><input type="number" min="0" max="120" class="form-control" id="reAge"></td>
+								</tr>
+								<tr>
+									<th><label>Gender</label></th>
+									<td><input type="text" class="form-control" id="reGender"></td>
+								</tr>
+								<tr>
+									<th><label>Address</label></th>
+									<td><input type="text" class="form-control" id="reAddress"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="CreateEmployee();">Save</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearEmployeeRegisterModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Employee Update Modal -->
+		<div class="modal fade" id="employeeUpdateModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Employee Update Information!</h4>
+						<button type="button" class="close" onclick="ClearEmployeeUpdateModal();">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<table class="table">
+								<tr>
+									<th><label>ID</label></th>
+									<td><input type="number" class="form-control" id="uId" readonly></td>
+								</tr>
+								<tr>
+									<th><label>Customer Name</label></th>
+									<td><input type="text" class="form-control" id="uName"></td>
+								</tr>
+								<tr>
+									<th><label>Age</label></th>
+									<td><input type="number" min="0" max="120" class="form-control" id="uAge"></td>
+								</tr>
+								<tr>
+									<th><label>Gender</label></th>
+									<td><input type="text" class="form-control" id="uGender"></td>
+								</tr>
+								<tr>
+									<th><label>Address</label></th>
+									<td><input type="text" class="form-control" id="uAddress"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success btn-md" onclick="UpdateEmployee();">Update</button>
+						<button type="button" class="btn btn-danger btn-md" onclick="DeleteEmployee();">Delete</button>
+						<button type="button" class="btn btn-warning btn-md" onclick="ClearEmployeeUpdateModal();">Cancle</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
