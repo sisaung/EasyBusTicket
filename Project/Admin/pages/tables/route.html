@@ -168,8 +168,52 @@
                         </select><br> -->
                         <input type="text" class="form-control" id="add_whichbus" disabled><br>
                         <input type="text" class="form-control" id="add_busid" placeholder="Bus" disabled><br>
-                        <input type="text" class="form-control" id="add_source" placeholder="Source"><br>
-                        <input type="text" class="form-control" id="add_destination" placeholder="Destination"><br>
+                        <!-- <input type="text" class="form-control" id="add_source" placeholder="Source"><br> -->
+                        <select class="form-control" name="add_source" id="add_source">
+                        <option value="">Source</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+                      </select><br>
+                        <!-- <input type="text" class="form-control" id="add_destination" placeholder="Destination"><br> -->
+                        <select class="form-control" name="add_destination" id="add_destination">
+                        <option value="">Destination</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+                      </select><br>
                         <input type="text" class="form-control" id="add_price" placeholder="Price"><br>
                       </div>
                       <div class="modal-footer">
@@ -244,8 +288,54 @@
                       </div>
                       <div class="modal-body">
                         <input type="text" class="form-control" id="edit_bus" placeholder="Bus"><br>
-                        <input type="text" class="form-control" id="edit_source" placeholder="Source"><br>
-                        <input type="text" class="form-control" id="edit_destination" placeholder="Destination"><br>
+                        <!-- <input type="text" class="form-control" id="edit_source" placeholder="Source"><br> -->
+                        <select class="selection" name="edit_source" id="edit_source">
+                        <option value="">Source</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+                      </select><br>
+                        <!-- <input type="text" class="form-control" id="edit_destination" placeholder="Destination"><br> -->
+                        <select class="selection" name="edit_destination" id="edit_destination">
+                        <option value="">Destination</option>
+                        <option value="Yangon">Yangon
+                        <option value="Mandalay">Mandalay
+                        <option value="NayPyiTaw" >NayPyiTaw
+                        <option value="Mawlamyine">Mawlamyine
+                        <option value="Ye" >Ye
+                        <option value="Dawei">Dawei
+                        <option value="Bago">Bago
+                        <option value="Hpa-An">Hpa-An
+                        <option value="Lashio">Lashio
+                        <option value="Magway">Magway
+                        <option value="Mudon">Mudon
+                        <option value="Myitkyina">Myitkyina
+                        <option value="Ngapali">Ngapali
+                        <option value="Pyay">Pyay
+                        <option value="Pyin Oo Lwin">Pyin Oo Lwin
+                        <option value="Taunggyi">Taunggyi
+                        <option value="Taungoo">Taungoo
+                        <option value="Thanbyuzayat">Thanbyuzayat
+                        <option value="Thaton">Thaton
+
+
+                      </select><br>
                         <input type="text" class="form-control" id="edit_price" placeholder="Price"><br>
                       </div>
                       <div class="modal-footer">
@@ -264,6 +354,7 @@
                     <th>Class Type</th>
                     <th>Date</th>
                     <th>Depature Time</th>
+                    <th>Whole Route</th>
                     <th></th>
                     <th></th>
                   </tr>

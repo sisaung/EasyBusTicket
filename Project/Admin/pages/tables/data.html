@@ -206,11 +206,22 @@
       </div>
       <div class="modal-body">
         <input type="text" class="form-control" id="add_busname" placeholder="Bus Name"><br>
-        <input type="text" class="form-control" id="add_class" placeholder="Class"><br>
+        <!-- <input type="text" class="form-control" id="add_class" placeholder="Class"><br> -->
+        <select name="select" id="add_class" class="form-control pro-edt-select form-control-primary">
+          <option value="">Class Type</option>
+          <option value="Standard">Standard</option>
+          <option value="VIP">VIP</option>
+        </select><br>
         <input type="text" class="form-control" id="add_date" placeholder="Date" onfocus="(this.type='date')"><br>
         <input type="text" class="form-control" id="add_deptime" placeholder="Depature Time" onfocus="(this.type='time')"><br>
         <input type="text" class="form-control" id="add_arrtime" placeholder="Arrival Time" onfocus="(this.type='time')"><br>
-        <input type="text" class="form-control" id="add_nationality" placeholder="Nationality"><br>
+        <!-- <input type="text" class="form-control" id="add_nationality" placeholder="Nationality"><br> -->
+        <select name="select" id="add_nationality" class="form-control pro-edt-select form-control-primary">
+          <option value="">Nationality</option>
+          <option value="Myanmar">Myanmar</option>
+          <option value="Foreigner">Foreigner</option>
+          <option value="All">All</option>
+        </select><br>
         <!-- <input type="text" class="form-control" id="add_quantity" placeholder="Seat Quantity"><br> -->
         <input type="text" class="form-control" id="add_available" placeholder="Available Seat"><br>
         <input type="text" class="form-control" id="add_routes" placeholder="Routes"><br>

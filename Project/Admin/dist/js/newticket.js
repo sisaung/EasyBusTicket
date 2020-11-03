@@ -1,9 +1,9 @@
-$("#newcustomer_datatable").DataTable({
+$("#newticket_datatable").DataTable({
       "responsive": true,
       "autoWidth": false,
     });
     $(document).ready(function(){
-      var datatable=$("#newcustomer_datatable").DataTable();
+      var datatable=$("#newticket_datatable").DataTable();
       var rowdata="";
       $.ajax({
       type : "GET",
@@ -33,8 +33,6 @@ $("#newcustomer_datatable").DataTable({
           rowdata+data[i].seatnumbers,
           rowdata+data[i].subtotal,
           rowdata+data[i].buyingdate,
-
-
         ]).draw(false);
         counter++;
       }

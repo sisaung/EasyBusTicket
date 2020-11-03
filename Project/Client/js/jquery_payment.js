@@ -3,7 +3,7 @@ $(document).ready(function(){
     setTimeout("window.location.href='ticket.html'",1000);
       var test= JSON.parse(sessionStorage.getItem("sessionKey"));
       var traveller= JSON.parse(sessionStorage.getItem("traveller_session"));
-      var seat = sessionStorage.getItem("seatValue")
+      var seat = sessionStorage.getItem("seatValue");
 
   seatNumber=seat.split(",");
   seat_quantity=seatNumber.length;
@@ -26,6 +26,7 @@ $(document).ready(function(){
 
   };
   // alert("ticketData");
+  console.log(ticketData);
 
     $.ajax({
       type: "POST",
@@ -58,12 +59,18 @@ function BusSeatControl(bus_id, seat_quantity){
   dataType: "json",
   success:function(data){
     total_seat=data.available_seat;
+    console.log(total_seat);
     ReduceSeatQuantity(bus_id, seat_quantity,total_seat);
+    console.log(seat_quantity);
   }
    });
  }
 
 function ReduceSeatQuantity(bus_id, seat_quantity,total_seat){
+    console.log(bus_id+"is bus id");
+    console.log(seat_quantity+"is seat_quantity");
+    console.log(total_seat+"tt");
+
     $.ajax({
         type: "PATCH",
         contentType: "application/json; charset=utf-8",
@@ -157,6 +164,6 @@ function ReduceSeatQuantity(bus_id, seat_quantity,total_seat){
      console.log(DateFormat(next));
      var date_format_next = DateFormat(next);
 
-     setTimeout("location.href='index.html'",60000);
+     setTimeout("location.href='index.html'",600000);
      sessionStorage.setItem("time_limit_payment",date_format_next);
    });

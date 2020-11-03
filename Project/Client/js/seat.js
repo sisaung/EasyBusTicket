@@ -18,14 +18,14 @@ var test= JSON.parse(sessionStorage.getItem("sessionKey"));
       routes_id=data.Routes_id;
       seats_id = data.Seats_id;
       clas_type = data.class_type;
-
       // console.log(clas_type);
       // console.log(routes_id);
       // console.log(seats_id);
       $("#tb").html("");
+      if (clas_type == "Standard") {
 
-        for(var j=0; j<routes_id.length; j++){
-          if(routes_id[j].source==test[5] && routes_id[j].destination==test[6] && clas_type ){
+
+
 
             for ( var i = 0; i < 40; i++) {
               if (i == 0 || (i+1)%4 == 1) {
@@ -49,8 +49,35 @@ var test= JSON.parse(sessionStorage.getItem("sessionKey"));
 
             }
 
+          }
+      else if(clas_type == "VIP"){
+        $("#tb").html("");
 
-        }
+
+
+                  for ( var i = 0; i < 30; i++) {
+                    if (i == 0 || (i+1)%3 == 1) {
+                      $("#tb").append('<tr>');
+                    }
+
+                      var check_seat = seatCheck((i+1));
+                      if(check_seat == true){
+
+                          $("#tb").append('<td><a class="seat seat-unavailable" href="#" ><span><i class="fa fa-lock" aria-hidden="true"></i></span></a></a></td>');
+                      }
+                      // var x=0;
+                      else {
+
+                        $("#tb").append('<td><a class="seat seat-available" href="#" data-seat-number="'+(i+1)+'" data-seat-id="'+data.id+'" id="number_one"><span>'+ (i+1) +'</span></a></a></td>');
+                      }
+
+                     if((i+1)%3 == 0){
+                        $("#tb").append('</tr>');
+                      }
+
+                  }
+
+
       }
 
       function BusId(bus_id){
@@ -61,10 +88,10 @@ var test= JSON.parse(sessionStorage.getItem("sessionKey"));
              dataType: "json",
              success:function(data){
                seat=data.selled_seats;
-               seatNumber=seat.split(",");
+               // seatNumber=seat.split(",");
                // console.log(seatNumber);
                // location.reload();
-               var jsonStr =seatNumber; //insert some json data here
+               var jsonStr =seat; //insert some json data here
                sessionStorage.setItem("myJson", JSON.stringify(jsonStr));
 
              }
@@ -79,7 +106,12 @@ var test= JSON.parse(sessionStorage.getItem("sessionKey"));
 
           }
 
-        var seatArr=passedJson;
+          var arr=passedJson.replace(/['"]+/g, '');
+
+          seatArr = arr.split(",");
+
+          console.log(seatArr);
+          console.log(seatArr.length);
         for (var i = 0; i < seatArr.length; i++) {
           if(seat == seatArr[i]){
             return true;

@@ -1,37 +1,13 @@
 from django.db import models
 
-# Register Statement........................................................................
-class Register(models.Model):
-    first_name=models.CharField(max_length=240)
-    last_name=models.CharField(max_length=240)
-    Email=models.EmailField(max_length=240,unique=True)
-    password=models.CharField(max_length=50)
-    confirm_password=models.CharField(max_length=50)
-
-    class Meta:
-        ordering=('id',)
-    def save(self, *args, **kwargs):
-        super(Register, self).save(*args, **kwargs)
-
-
-
-class SignIn(models.Model):
-    email=models.EmailField(max_length=240,unique=True)
-    password=models.CharField(max_length=50)
-
-    class Meta:
-        ordering=('id',)
-    def save(self, *args, **kwargs):
-        super(SignIn, self).save(*args, **kwargs)
-
 # Before Sale Statements................................................................
 
 
 # 1
 class Operators(models.Model):
     operators_name=models.CharField(max_length=250)
-    class_type=models.CharField(max_length=250)
     date=models.DateField()
+    class_type=models.CharField(max_length=250)
     depature_time=models.TimeField()
     arrival_time=models.TimeField()
     nationality=models.CharField(max_length=250)
@@ -52,16 +28,6 @@ class Operators(models.Model):
 
 
 # 2
-class Seats(models.Model):
-    operators=models.ForeignKey(Operators, related_name="Seats_id", on_delete=models.CASCADE)
-    seat_no=models.CharField(max_length=500)
-    status=models.CharField(max_length=250)
-    class Meta:
-        ordering=('id',)
-    def save(self, *args, **kwargs):
-        super(Seats, self).save(*args, **kwargs)
-    def __str__(self):
-        return '%d %s' % (self.seat_no, self.status)
 
 class Routes(models.Model):
     operators=models.ForeignKey(Operators, related_name="Routes_id", on_delete=models.CASCADE)
@@ -95,32 +61,11 @@ class Sale_Tickets(models.Model):
         super(Sale_Tickets, self).save(*args, **kwargs)
 
 
-# class Operators_route(models.Model):
-#     operator_id=models.ForeignKey(Operators,related_name="operators_route_id", on_delete=models.CASCADE)
-#     route_id=models.ForeignKey(Routes,related_name="operators_route_id", on_delete=models.CASCADE)
-#     class Meta:
-#         ordering=('id',)
-#     def save(self, *args, **kwargs):
-#         super(Operators_route, self).save(*args, **kwargs)
-# After Sale............................................................................
 
 
 
 
 
-
-# Bus Station......................................................................................
-
-class Bus_Stations(models.Model):
-    bus=models.CharField(max_length=250)
-    city=models.CharField(max_length=250)
-    address=models.CharField(max_length=250)
-    phone=models.CharField(max_length=250)
-
-    class Meta:
-        ordering=('id',)
-    def save(self, *args, **kwargs):
-        super(Bus_Stations, self).save(*args, **kwargs)
 
 # contact......................................................................................
 

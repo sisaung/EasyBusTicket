@@ -21,13 +21,9 @@ from django.contrib import admin
 from django.urls import path
 
 router = DefaultRouter()
-router.register(r'Register', views.RegisterViewSet)
-router.register(r'SignIn',views.SignInViewSet)
-router.register(r'Seats',views.SeatsViewSet)
 router.register(r'Operators',views.OperatorsViewSet)
 router.register(r'Routes',views.RoutesViewSet)
 router.register(r'Sale_Tickets',views.Sale_TicketsViewSet)
-router.register(r'Bus_Stations',views.Bus_StationsViewSet)
 router.register(r'Contact',views.ContactViewSet)
 
 

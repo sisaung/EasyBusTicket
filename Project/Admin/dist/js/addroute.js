@@ -24,6 +24,7 @@ $("#route_datatable").DataTable({
            rowdata+data[i].class_type,
            rowdata+data[i].date,
            rowdata+data[i].depature_time,
+           rowdata+data[i].browse_route,
            rowdata+'<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="InsertDataIntRouteAddModal('+bid+');">Add Route</button>',
            rowdata+'<button id="edit_route" class="btn btn-success" data-toggle="modal" data-target="#editRoute" onclick="InsertDataIntRouteUpdateModal('+bid+');"><i class="fas fa-info-circle"></i></button>',
 

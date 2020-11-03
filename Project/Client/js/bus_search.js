@@ -12,7 +12,7 @@ $(document).ready(function(){
         var seatno=$("#seatID").val();
         var nationality=$("#nationalID").val();
 
-    
+
 
 
           $.ajax({
@@ -34,19 +34,15 @@ $(document).ready(function(){
             browse_route= data[i].browse_route;
             depature_time=data[i].depature_time;
             arrival_time=data[i].arrival_time;
-            class_type=data[i].class_type;
+            class_type = data[i].class_type;
             images=data[i].images;
             routes_id=data[i].Routes_id;
             time=data[i].day_night;
 
                 for(j=0; j<routes_id.length; j++){
-                  if(routes_id[j].source==leave && routes_id[j].destination==go && data[i].date==date){
+                  if(routes_id[j].source==leave && routes_id[j].destination==go && data[i].date==date ){
 
-
-
-
-              $('#radiobtn').append('<input id="operator_option_'+data[i].id+'" type="radio" name="operator_option" class="operator_option" value="'+data[i].id+'" ><label for="operator_option" >'+"&nbsp;"+operators_name+"</label></br>")
-
+                  $('#radiobtn').append('<input id="operator_option_'+data[i].id+'" type="radio" name="operator_option" class="operator_option" value="'+data[i].id+'" ><label for="operator_option" >'+"&nbsp;"+operators_name+"</label></br>")
               $('#trip').append('<div id="result_trip" class="card mb-4 trip_result" data-time-period="'+time+'" data-operator-id="'+data[i].id+'"><div class="card-body"><div class="row"> <div class="col-md-6 col-12"><div class="text-bold text-dark" ><div class="lead" >'+depature_time+" - "+class_type+'</div></div>'+'<div class="mt-1">'+browse_route+'<div class="small" id="departurename">'+"Departs :"+depature_time+"</div>"+'<div class="small" id="arrivalname">'+"Arrives :"+arrival_time+"</div>"+'</div></div>'+'<div class="col-md-3 col-5 d-flex align-items-center"><div class="text-center">'+"<div id='opname'>"+operators_name+'</div></div></div>'+'<div class="col-md-3 col-7 text-right"><div class="lead text-success text-bold"><div class="lead text-success text-bold" id="subtotal">'+routes_id[j].price*seatno+" <small>MMK </small>"+'</div>'+'<div class="small">'+seatno+" Seats"+" x "+routes_id[j].price +'</div>'+'<button type="submit" class="btn btn-primary btn-search" id="select_seat" onclick="seatSelection('+data[i].id+');">Select Seat</button>'+'</div></div></div></div></div>')
 
                     }
